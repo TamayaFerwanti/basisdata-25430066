@@ -1,0 +1,5 @@
+# Mengabaikan file sistem atau sampah editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
