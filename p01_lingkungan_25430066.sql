@@ -7,7 +7,6 @@ GRANT ALL PRIVILEGES ON kopma_066.* TO 'mhs_066'@'localhost';
 FLUSH PRIVILEGES;
 
 CREATE USER IF NOT EXISTS 'tamu_066'@'localhost' IDENTIFIED BY 'Passwordkerja';
-GRANT ALL PRIVILEGES ON kopma_066.* TO 'tamu_066'@'localhost';
+GRANT SELECT ON kopma_066.* TO 'tamu_066'@'localhost';
 FLUSH PRIVILEGES;
-
 
