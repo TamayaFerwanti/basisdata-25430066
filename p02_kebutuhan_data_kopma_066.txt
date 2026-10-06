@@ -1,0 +1,46 @@
+# Dokumen Kebutuhan Data - Koperasi Mahasiswa (Kopma)
+
+## 1. Proses Bisnis (PB)
+- PB-01: Mendaftarkan Anggota
+- PB-02: Mencatat Penjualan Barang
+- PB-03: Memesan Barang ke Pemasok
+- PB-04: Menerima Barang dari Pemasok
+- PB-05: Menyusun Laporan Bulanan
+
+## 2. Entitas Kandidat
+`Anggota`, `Barang`, `Penjualan`, `Detail_Penjualan`, `Petugas`, `Pemasok`, `Pembelian`, `Detail_Pembelian`
+
+## 3. Aturan Bisnis (AB)
+- AB-01: Setiap transaksi penjualan dicatat oleh 1 Petugas yang sedang bertugas.
+- AB-02: Satu transaksi penjualan dapat terdiri dari 1 atau banyak Barang (Detail_Penjualan).
+- AB-03: Harga barang pada Detail_Penjualan mencatat harga saat transaksi berlangsung.
+- AB-04: Pembelian barang ke Pemasok mencatat tanggal pemesanan dan status penerimaan.
+- AB-05: Anggota mendapatkan poin belanja dari setiap transaksi penjualan.
+- AB-06: Stok barang berkurang otomatis saat terjadi transaksi penjualan dan bertambah saat penerimaan barang.
+
+## 4. Kebutuhan Informasi (KI)
+- KI-01: Berapa total omzet penjualan bulanan?
+- KI-02: Barang apa yang paling laris dijual bulan ini?
+- KI-03: Siapa saja anggota yang aktif berbelanja dalam 3 bulan terakhir?
+- KI-04: Berapa sisa stok untuk masing-masing barang?
+
+## 5. Matriks CRUD
+| Entitas | PB-01 | PB-02 | PB-03 | PB-04 | PB-05 |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Anggota | C, R | R | - | - | R |
+| Barang | - | R, U | R | R, U | R |
+| Penjualan | - | C, R | - | - | R |
+| Detail_Penjualan | - | C, R | - | - | R |
+| Pemasok | - | - | R | R | - |
+| Pembelian | - | - | C, R | R, U | R |
+| Detail_Pembelian | - | - | C, R | R, U | R |
+
+## 6. Kamus Data Awal
+| Nama Elemen Data | Tipe Data | Deskripsi | Data Steward |
+| :--- | :--- | :--- | :--- |
+| id_anggota | VARCHAR | Kode unik identitas anggota | Divisi Keanggotaan |
+| nama_anggota | VARCHAR | Nama lengkap anggota | Divisi Keanggotaan |
+| id_barang | VARCHAR | Kode barang / SKU | Divisi Operasional |
+| harga_satuan | INT | Harga jual barang saat ini | Divisi Keuangan |
+| stok_barang | INT | Jumlah ketersediaan fisik barang | Divisi Operasional |
+| tgl_transaksi | DATETIME | Waktu transaksi dilakukan | Kasir / Operasional |

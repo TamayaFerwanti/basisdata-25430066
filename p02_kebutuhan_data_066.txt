@@ -1,0 +1,64 @@
+# Dokumen Kebutuhan Data Proyek Mandiri - Minimarket TF mart
+
+## 1. Profil & Deskripsi Toko
+TF mart adalah usaha minimarket ritel yang melayani penjualan kebutuhan pokok harian, mulai dari sembako, makanan ringan, minuman, sampai produk perawatan diri dan perlengkapan rumah tangga. Untuk menjaga loyalitas pembeli, TF mart menerapkan sistem pendaftaran member serta pembagian voucher belanja atau diskon berkala.
+
+## 2. Identitas & Parameter Sistem
+- Digit NIM: 66
+- Perhitungan Parameter P: (66 mod 9) + 1 = 4
+- Batas Maksimal Item Promo: 6 unit barang per transaksi
+- Nominal Diskon / Potongan: Rp4.000
+- Beban Performa Minimal: 60 transaksi per hari
+
+## 3. Aktor & Proses Bisnis
+- PB-01: Pendaftaran dan Pendataan Member TF mart
+- PB-02: Transaksi Penjualan Barang di Kasir
+- PB-03: Klaim Potongan Harga dan Voucher Belanja
+- PB-04: Pengelolaan Stok Barang dan Pasokan Gudang
+
+## 4. Entitas Kandidat
+`Pelanggan`, `Barang`, `Kategori_Barang`, `Transaksi`, `Detail_Transaksi`, `Diskon_Voucher`
+
+## 5. Aturan Bisnis (AB)
+- AB-01: Pembeli wajib terdaftar sebagai Member TF mart jika ingin menikmati promo potongan harga dan poin belanja.
+- AB-02: Khusus untuk item kategori promo, pembelian dibatasi paling banyak 6 unit barang dalam satu kali transaksi.
+- AB-03: Member aktif berhak mendapatkan diskon khusus senilai Rp4.000 pada program promosi tertentu.
+- AB-04: Setiap nota pembayaran harus mencatat tanggal, jam transaksi, total bayar, serta ID petugas kasir.
+- AB-05: Satu nota transaksi kasir hanya boleh ditangani oleh 1 orang petugas kasir yang sedang bertugas.
+- AB-06: Stok barang di sistem otomatis berkurang sesaat setelah transaksi kasir berhasil disimpan.
+- AB-07: Penambahan stok fisik barang hanya dilakukan saat ada kiriman masuk dari distributor yang terverifikasi.
+- AB-08: Voucher diskon Rp4.000 hanya dapat digunakan 1 kali per transaksi agar tidak terjadi klaim ganda.
+
+## 6. Kebutuhan Informasi (KI)
+- KI-01: Berapa total omzet harian yang didapat toko hari ini?
+- KI-02: Produk apa saja yang paling cepat laku (fast-moving) dalam seminggu terakhir?
+- KI-03: Berapa total nominal diskon Rp4.000 yang sudah dipakai pelanggan selama sebulan?
+- KI-04: Berapa sisa stok barang yang ada di rak toko dan tempat penyimpanan?
+- KI-05: Siapa saja member yang paling sering belanja di TF mart bulan ini?
+
+## 7. Matriks CRUD
+| Entitas | PB-01 (Pendaftaran) | PB-02 (Penjualan) | PB-03 (Voucher/Diskon) | PB-04 (Stok/Gudang) |
+| :--- | :---: | :---: | :---: | :---: |
+| Pelanggan | C, R, U | R | R, U | - |
+| Barang | - | R, U | R | C, R, U, D |
+| Kategori_Barang | - | R | R | C, R, U |
+| Transaksi | - | C, R | R, U | - |
+| Detail_Transaksi | - | C, R | R | - |
+| Diskon_Voucher | - | - | C, R, U | - |
+
+## 8. Kamus Data Awal
+| Nama Elemen Data | Tipe Data | Deskripsi Singkat | Pengelola Data |
+| :--- | :--- | :--- | :--- |
+| id_pelanggan | VARCHAR | Kode unik identitas member TF mart | Kasir / Admin |
+| nama_pelanggan | VARCHAR | Nama lengkap pembeli/member | Kasir / Admin |
+| id_barang | VARCHAR | Kode barcode / SKU produk | Bagian Gudang |
+| harga_satuan | INT | Harga jual barang per unit | Keuangan Toko |
+| id_transaksi | VARCHAR | Nomor unik struk pembayaran kasir | Kasir / Operator |
+| tgl_transaksi | DATETIME | Waktu dan tanggal transaksi dilakukan | Kasir / Operator |
+| nominal_diskon | INT | Potongan harga promo (Rp4.000) | Keuangan Toko |
+| jumlah_item | INT | Jumlah unit barang yang dibeli (Maks. 6) | Kasir / Operator |
+
+## 9. Kebutuhan Non-Fungsional
+- Performa Sistem: Aplikasi kasir harus sanggup memproses sedikitnya 60 transaksi per hari tanpa mengalami penurunan kecepatan atau lag.
+- Kecepatan Respon: Pindai barcode barang hingga muncul di layar kasir membutuhkan waktu kurang dari 2 detik.
+- Keamanan: Data pribadi member dan laporan penjualan bersifat rahasia, hanya bisa dibuka oleh kasir dan pemilik toko.

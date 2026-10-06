@@ -1,0 +1,44 @@
+# Laporan Praktikum Basis Data - Pertemuan 2
+**Nama:** Tamaya Ferwanti  
+**NPM:**  25430066
+**Kelas:** C  
+**Tanggal:** 6 Oktober 2026  
+
+## 1. Tujuan Praktikum
+Memahami kebutuhan data sistem secara rinci, mulai dari pemetaan entitas, perumusan aturan bisnis, penyusunan matriks CRUD, hingga pembuatan kamus data untuk proyek mandiri.
+
+## 2. Ringkasan Dasar Teori
+Tahap analisis kebutuhan data menjadi fondasi penting sebelum masuk ke perancangan fisik basis data. Pada tahap ini, entitas, atribut, dan relasi antar-data ditentukan agar basis data yang dibuat benar-benar sesuai dengan alur bisnis sistem.
+
+## 3. Hasil Langkah Percobaan
+Seluruh hasil identifikasi kebutuhan data Kopma sudah dicatat dan disimpan dalam berkas
+ p02_kebutuhan_data_kopma_066.txt.
+
+## 4. Jawaban Titik Analisis
+1. **Titik Analisis 1**: Harga barang pada nota detail transaksi harus disimpan terpisah (`harga_satuan_detail`) agar data laporan keuangan historis tidak berubah jika di kemudian hari harga barang di tabel master mengalami kenaikan/perubahan.
+2. **Titik Analisis 2**: 
+   - *Alasan tidak menyimpan total harga*: Mencegah redundansi dan risiko ketidakcocokan data (*inconsistency*).
+   - *Alasan tetap menyimpan total harga*: Mempercepat kueri rekapitulasi laporan tanpa melakukan proses kalkulasi agregat `SUM()` berulang pada volume data besar.
+3. **Titik Analisis 3**: Pada matriks CRUD Kopma, entitas `Pemasok` belum memiliki operasi `C` (Create). Solusinya adalah menambah proses bisnis pengisian/pengelolaan master data pemasok baru.
+
+## 5. Hasil Latihan dan Modifikasi (Perbaikan Kalimat Kabur)
+- **Keamanan**: Akses nomor HP dan identitas anggota dibatasi hanya untuk Ketua Koperasi; password disimpan menggunakan metode enkripsi hash.
+- **Kecepatan**: Pencarian data barang berdasarkan kode atau nama harus merespons kurang dari 2 detik untuk volume hingga 10.000 data.
+- **Akurasi Stok**: Stok barang berkurang otomatis saat transaksi diproses dan ditolak jika kuantitas melebihi stok yang tersedia ($stok \ge 0$).
+
+## 6. Tugas Mandiri: Milestone Proyek 2
+Berkas proyek mandiri disimpan di: `p02_kebutuhan_data_066.txt`.
+
+![Pratinjau Dokumen Proyek](img/p02_proyek_github.png)
+
+## 7. Pembahasan dan Kendala
+Kendala utama adalah menentukan pembagian entitas utama dan entitas transaksi detail, yang diselesaikan dengan menganalisis aturan bisnis transaksi.
+
+## 8. Kesimpulan
+Tahap analisis kebutuhan data memastikan basis data yang dirancang mencakup seluruh kebutuhan operasional dan laporan sistem.
+
+## 9. Pernyataan Penggunaan AI
+Penggunaan AI dimanfaatkan untuk membantu menyusun struktur laporan dan memahami konsep matriks CRUD.
+
+## 10. Bukti Git
+![Bukti Git Push](img/p02_git_push.png)
