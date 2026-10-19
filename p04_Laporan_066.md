@@ -174,8 +174,13 @@ Melalui pengerjaan Modul 4 ini, rancangan basis data untuk Toko Daring **TF Mart
 ### 4.3 Eksekusi Perintah Git Commit
 Setelah berkas laporan ini disimpan di dalam folder `laporan/p04_laporan_25430066.md`, langkah terakhir adalah melakukan commit dan push ke repositori GitHub dengan menjalankan perintah berikut di terminal VS Code:
 
+
 ```bash
 git add .
 git commit -m "p04: normalisasi toko daring tf mart"
 git push origin main
+
+Link GitHub https://github.com/TamayaFerwanti/basisdata-25430066/edit/main/p04_Laporan_066.md
+Commit ba8d4a7
+
 ```
