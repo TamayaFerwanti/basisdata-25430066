@@ -53,7 +53,7 @@ Berdasarkan seluruh tahapan praktikum yang telah dilakukan, skema relasional 3NF
 Penyusunan laporan dan verifikasi logika perancangan ini mendapatkan dukungan asistensi dari kecerdasan buatan (Gemini) dalam hal pemeriksaan kaidah BCNF, formulasi ketergantungan fungsional, serta penataan struktur dokumen berbasis Markdown agar lebih rapi dan komunikatif.
 
 ## 10. Bukti Git
-* **Tautan Repositori:** `https://github.com/TamayaFerwanti/basisdata-25430066`
+* **Tautan Repositori:** `https://github.com/TamayaFerwanti/basisdata-25430066/blob/main/p04_Laporan_066.md'
 * **Pesan Commit / Hash:** `p04: update laporan dengan milestone tf mart`
 
 ---
