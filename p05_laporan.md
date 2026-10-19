@@ -47,8 +47,8 @@ Modul 5 berhasil diselesaikan dengan membangun seluruh arsitektur fisik tabel ba
 Penggunaan AI (Gemini) dimanfaatkan untuk membantu menyusun sintaks DDL MariaDB yang valid, pemetaan kode galat *constraint*, serta perapian laporan ke dalam format Markdown.
 
 ## 9. Bukti Git
-- **Tautan Repositori:** `https://github.com/TamayaFerwanti/basisdata-25430066`
-- **Commit Hash Pertemuan 5:** `p05_hash`
+- **Tautan Repositori:** `https://github.com/TamayaFerwanti/basisdata-25430066/edit/main/p05_laporan.md`
+- **Commit Hash Pertemuan 5:** `6f2339f`
 
 ---
 
