@@ -41,4 +41,4 @@ Tahap analisis kebutuhan data memastikan basis data yang dirancang mencakup selu
 Penggunaan AI dimanfaatkan untuk membantu menyusun struktur laporan dan memahami konsep matriks CRUD.
 
 ## 10. Bukti Git
-![Bukti Git Push](img/p02_git_push.png)
+https://github.com/TamayaFerwanti/basisdata-25430066/edit/main/p02_laporan_066.txt
