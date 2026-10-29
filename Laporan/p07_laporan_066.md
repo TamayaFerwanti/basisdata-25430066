@@ -50,7 +50,7 @@ Dalam pengerjaan laporan modul ini, bantuan AI (Gemini) dimanfaatkan secara inte
 
 ## 9. Bukti Git
 - **Tautan Repositori:** `https://github.com/TamayaFerwanti/basisdata-25430066`
-- **Commit Hash Pertemuan 7:** `p07_hash`
+- **Commit Hash Pertemuan 7:** `8af5e7c`
 
 ---
 
