@@ -27,7 +27,7 @@ Dalam persiapan dokumen dan pengorganisasian skrip instalasi UTS ini, bantuan AI
 
 ## 6. Bukti Git
 - **Tautan Repositori:** `https://github.com/TamayaFerwanti/basisdata-25430066`
-- **Commit Hash UTS:** `p08_hash`
+- **Commit Hash UTS:** `a7da35d`
 
 ---
 
