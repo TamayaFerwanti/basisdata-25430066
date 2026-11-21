@@ -38,4 +38,4 @@ Bantuan AI dimanfaatkan untuk membantu menyusun struktur kueri SQL, memverifikas
 
 ## 7. Bukti Git
 - **Tautan Repositori:** `https://github.com/TamayaFerwanti/basisdata-25430066`
-- **Commit Hash Pertemuan 9:** `p09_hash`
+- **Commit Hash Pertemuan 9:** `5a5447d`
